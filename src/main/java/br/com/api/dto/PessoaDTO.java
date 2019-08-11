@@ -11,7 +11,7 @@ import br.com.api.validation.PessoaUpdateValidation;
 
 @PessoaUpdateValidation
 public class PessoaDTO implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
@@ -31,10 +31,23 @@ public class PessoaDTO implements Serializable {
 	public PessoaDTO() {
 	}
 
+	public PessoaDTO(Integer id, String nome, String email, Integer idade, Integer peso, String altura) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.idade = idade;
+		this.peso = peso;
+		this.altura = altura;
+	}
+
 	public PessoaDTO(Pessoa obj) {
-		id = obj.getId();
-		nome = obj.getNome();
-		email = obj.getEmail();
+		this.id = obj.getId();
+		this.nome = obj.getNome();
+		this.email = obj.getEmail();
+		this.idade = obj.getIdade();
+		this.peso = obj.getPeso();
+		this.altura = obj.getAltura();
 	}
 
 	public Integer getId() {

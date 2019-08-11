@@ -38,7 +38,9 @@ public class PessoaResource {
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> update(@Valid @PathVariable Integer id, @RequestBody PessoaDTO dto) {
 		Pessoa pessoa = pessoaService.fromTO(dto);
-		pessoa.setId(id);
+		if(id != null) {
+			pessoa.setId(id);
+		}
 		pessoa = pessoaService.update(pessoa);
 		return ResponseEntity.noContent().build();
 	}
@@ -57,9 +59,9 @@ public class PessoaResource {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<PessoaDTO>> findAll() {
-		List<Pessoa> listDTO = pessoaService.findAll();
-		List<PessoaDTO> listTO = listDTO.stream().map(dto -> new PessoaDTO(dto)).collect(Collectors.toList());
-		return ResponseEntity.ok().body(listTO);
+		List<Pessoa> list = pessoaService.findAll();
+		List<PessoaDTO> listDTO = list.stream().map(pessoa -> new PessoaDTO(pessoa)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDTO);
 	}
 
 }

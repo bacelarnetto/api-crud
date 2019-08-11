@@ -23,6 +23,10 @@ public class Pessoa implements Serializable {
 	private Integer idade;
 	private Integer peso;
 	private String altura;
+	
+	public Pessoa() {
+		
+	}
 
 	public Pessoa(Integer id, String nome, String email, Integer idade, Integer peso, String altura) {
 		super();
