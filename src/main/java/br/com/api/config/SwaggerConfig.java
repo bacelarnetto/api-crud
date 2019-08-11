@@ -49,8 +49,9 @@ public class SwaggerConfig {
 	}
 	
 	private ApiInfo apiInfo() {
-		return new ApiInfo("API de pessoas",
-				"Esta API é para fins de seleção usando a tecnologia Java com Spring Boot", 
+		return new ApiInfo("API Java com Spring Boot",
+				"Esta API fornece serviços RESTful que contempla a implementação de CRUDs \r\n" + 
+				"utilizando a tecnologia Java com Spring Boot.", 
 				"Versão 1.0",
 				"https://github.com/bacelarnetto/api-crud",
 				new Contact("José Bacelar", 
