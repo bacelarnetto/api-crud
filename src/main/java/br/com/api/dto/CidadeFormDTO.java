@@ -6,26 +6,26 @@ public class CidadeFormDTO implements Serializable {
 		
 	private static final long serialVersionUID = 1L;
 	
-	private String nome;
+	private String name;
 	private String uf;
 	
 	public CidadeFormDTO() {
 		super();
 	}
 
-	public CidadeFormDTO(String nome, String uf) {
+	public CidadeFormDTO(String name, String uf) {
 		super();
-		this.nome = nome;
+		this.name = name;
 		this.uf = uf;
 	}
 
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getUf() {

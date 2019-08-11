@@ -4,19 +4,19 @@ import java.io.Serializable;
 
 public class CidadeDTO implements Serializable {
 		
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;	
 	
-	private Integer id;
-	private String nome;
+	private String name;
 	private String uf;
+	private Integer id;
 	
 	public CidadeDTO() {
 		super();
 	}
 
-	public CidadeDTO(String nome, String uf, Integer id) {
+	public CidadeDTO(String name, String uf, Integer id) {
 		super();
-		this.nome = nome;
+		this.name = name;
 		this.uf = uf;
 		this.id = id;
 	}
@@ -29,20 +29,20 @@ public class CidadeDTO implements Serializable {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	public String getUf() {
 		return uf;
 	}
 
 	public void setUf(String uf) {
 		this.uf = uf;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
