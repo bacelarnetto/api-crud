@@ -2,32 +2,23 @@ package br.com.api.dto;
 
 import java.io.Serializable;
 
-public class CidadeDTO implements Serializable {
+public class CidadeFormDTO implements Serializable {
 		
 	private static final long serialVersionUID = 1L;
 	
-	private Integer id;
 	private String nome;
 	private String uf;
 	
-	public CidadeDTO() {
+	public CidadeFormDTO() {
 		super();
 	}
 
-	public CidadeDTO(String nome, String uf, Integer id) {
+	public CidadeFormDTO(String nome, String uf) {
 		super();
 		this.nome = nome;
 		this.uf = uf;
-		this.id = id;
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getNome() {
 		return nome;
