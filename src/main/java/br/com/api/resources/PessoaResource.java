@@ -19,6 +19,7 @@ import br.com.api.domain.Pessoa;
 import br.com.api.dto.PessoaDTO;
 import br.com.api.dto.PessoaNewDTO;
 import br.com.api.service.PessoaService;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(value = "/pessoas")
@@ -27,6 +28,7 @@ public class PessoaResource {
 	@Autowired
 	private PessoaService pessoaService;
 
+	@ApiOperation(value="Cadastrar uma Pessoa")
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> insert(@Valid @RequestBody PessoaNewDTO dto) {
 		Pessoa pessoa = pessoaService.fromTO(dto);
@@ -35,6 +37,7 @@ public class PessoaResource {
 		return ResponseEntity.created(uri).build();
 	}
 
+	@ApiOperation(value="Atualizar uma Pessoa por id")
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Void> update(@Valid @PathVariable Integer id, @RequestBody PessoaDTO dto) {
 		Pessoa pessoa = pessoaService.fromTO(dto);
@@ -45,18 +48,21 @@ public class PessoaResource {
 		return ResponseEntity.noContent().build();
 	}
 
+	@ApiOperation(value="Excluir uma Pessoa por id")
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Void> delete(@PathVariable Integer id) {
 		pessoaService.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 
+	@ApiOperation(value="Buscar Pessoa por id")
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Pessoa> find(@PathVariable Integer id) {
 		Pessoa pessoa = pessoaService.find(id);
 		return ResponseEntity.ok().body(pessoa);
 	}
 
+	@ApiOperation(value="Buscar a lista com todas as Pessoas")
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<PessoaDTO>> findAll() {
 		List<Pessoa> list = pessoaService.findAll();
