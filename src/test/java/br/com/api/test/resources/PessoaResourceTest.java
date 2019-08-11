@@ -1,4 +1,4 @@
-package br.com.api.test.controller;
+package br.com.api.test.resources;
 
 import java.net.URI;
 import java.net.URISyntaxException;
