@@ -2,6 +2,7 @@ package br.com.api.message;
 import java.io.Serializable;
 
 public class StandardError implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	private Long timestamp;
